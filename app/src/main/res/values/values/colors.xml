@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="custom_header_text">#030303</color>
+
+    <color name="colorPrimary">@color/md_white</color>
+    <color name="colorPrimaryDark">@color/md_grey_600</color>
+    <color name="colorAccent">@color/md_light_blue_600</color>
+
+
+    <color name="Color.Primary">@color/md_light_blue_600</color>
+    <color name="Color.Secondary">@color/md_cyan_600</color>
+    <color name="Color.Red">@color/md_red_600</color>
+    <color name="Color.Success">@color/md_teal_600</color>
+    <color name="Color.Info">@color/md_light_blue_600</color>
+    <color name="Color.Default">@color/md_grey_600</color>
+    <color name="Color.Background">@color/md_blue_grey_50</color>
+
+    <color name="Color.Text.Light">@color/md_grey_400</color>
+
+    <!--
+
+      _____      _                            _____      _
+    / ____|    | |                          / ____|    | |
+    | |     ___ | | ___  _ __    ___  _ __  | |     ___ | | ___  _   _ _ __
+    | |    / _ \| |/ _ \| '__|  / _ \| '__| | |    / _ \| |/ _ \| | | | '__|
+    | |___| (_) | | (_) | |    | (_) | |    | |___| (_) | | (_) | |_| | |
+    \_____\___/|_|\___/|_|     \___/|_|     \_____\___/|_|\___/ \__,_|_|
+
+    -->
+
+
+    <!-- google's material design colours from
+    http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->
+
+    <!--reds-->
+    <color name="md_red_600">#E53935</color>
+
+    <!-- pinks -->
+
+    <!-- purples -->
+
+    <!-- deep purples -->
+
+    <!-- indigo -->
+
+    <!--blue-->
+
+    <!-- light blue-->
+    <color name="md_light_blue_600">#039BE5</color>
+
+    <!-- cyan -->
+    <color name="md_cyan_600">#00ACC1</color>
+
+    <!-- teal -->
+    <color name="md_teal_600">#00897b</color>
+
+    <!-- green -->
+    <color name="md_green_500">#4CAF50</color>
+
+    <!--light green-->
+
+    <!-- lime-->
+
+    <!--yellow -->
+
+    <!--amber-->
+
+    <!--orange-->
+
+    <!--deep orange-->
+
+    <!--brown -->
+
+    <!--grey-->
+    <color name="md_grey_300">#e0e0e0</color>
+    <color name="md_grey_400">#BDBDBD</color>
+    <color name="md_grey_600">#757575</color>
+
+    <!--blue grey-->
+    <color name="md_blue_grey_50">#ECEFF1</color>
+
+
+    <color name="md_white">#ffffff</color>
+    <color name="md_black">#000000</color>
+    <color name="md_red_A300">#ff5252</color>
+</resources>

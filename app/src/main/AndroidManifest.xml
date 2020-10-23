@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.thedesignerx.saim.humaravisa">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logoshadow"
+        android:label="Humara Visa"
+        android:roundIcon="@drawable/logoshadow"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ActivityVideoGuide" />
+        <activity android:name=".ActivityContactUs" />
+        <activity android:name=".ActivityApply" />
+        <activity android:name=".ActivityTouristVisa" />
+        <activity android:name=".ActivityWorkVisa" />
+        <activity android:name=".ActivityStudyVisa" />
+        <activity android:name=".Home" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SmallImageActivity" />
+        <activity android:name=".ImageGallaryDetailActivity" />
+    </application>
+
+</manifest>
