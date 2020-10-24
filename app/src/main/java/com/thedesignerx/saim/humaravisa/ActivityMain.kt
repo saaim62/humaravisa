@@ -21,7 +21,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class SmallImageActivity : AppCompatActivity() {
-    var recyclerView: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_small_recyclerview)
@@ -29,51 +28,10 @@ class SmallImageActivity : AppCompatActivity() {
         onClickListeners()
         cardBackground()
         video()
-        recycler()
     }
     override fun onResume() {
         super.onResume()
         video()
-    }
-    private fun recycler() {
-        recyclerView = findViewById(R.id.recyclerView1)
-        recyclerView?.layoutManager = LinearLayoutManager(this)
-        val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(Api.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val api = retrofit.create(Api::class.java)
-        Log.d(ContentValues.TAG, "onClick  " + api.getContact())
-
-        api.getContact()?.enqueue(object : Callback<JSONRestaurant?> {
-            override fun onResponse(
-                call: Call<JSONRestaurant?>?,
-                response: Response<JSONRestaurant?>?
-            ) {
-                val restaurant = response?.body() as JSONRestaurant
-                recyclerView?.adapter = SmallRecyclerAdapter(
-                    this@SmallImageActivity,
-                    restaurant.images,
-                    restaurant.name
-                )
-                initRecyclerView()
-            }
-
-            private fun initRecyclerView() {
-                val linearLayoutManager = LinearLayoutManager(
-                    this@SmallImageActivity,
-                    LinearLayoutManager.HORIZONTAL,
-                    false
-                )
-                findViewById<RecyclerView?>(R.id.recyclerView1)?.layoutManager = linearLayoutManager
-            }
-
-            override fun onFailure(call: Call<JSONRestaurant?>?, t: Throwable?) {
-                if (t != null) {
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
     }
 
     private fun video() {

@@ -1,6 +1,4 @@
 package com.thedesignerx.saim.humaravisa
-
-import com.thedesignerx.saim.humaravisa.Image
 import java.io.Serializable
 
 data class JSONRestaurant(
