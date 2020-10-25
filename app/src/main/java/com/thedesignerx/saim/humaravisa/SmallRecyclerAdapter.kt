@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
@@ -15,15 +16,17 @@ import java.io.Serializable
 class SmallRecyclerAdapter(
     private val context: Context?,
     private val items: List<Image>,
-    private val name: String
+    private val name: String? = null
 ) : RecyclerView.Adapter<RecyclerViewHolder?>() {
 
     inner class RecyclerViewHolder(itemView: View?) : ViewHolder(itemView!!) {
-        lateinit var imageView1: ZoomInImageView
+        lateinit var cardImg: ZoomInImageView
+        lateinit var cardText: TextView
 
         init {
             if (itemView != null) {
-                imageView1 = itemView.findViewById<View?>(R.id.cardImg) as ZoomInImageView
+                cardImg = itemView.findViewById<View?>(R.id.cardImg) as ZoomInImageView
+                cardText = itemView.findViewById<View?>(R.id.cardText) as TextView
             }
         }
     }
@@ -39,10 +42,10 @@ class SmallRecyclerAdapter(
         if (context != null) {
             Glide.with(context)
                 .load(item.url)
-                .into(holder.imageView1)
-
+                .into(holder.cardImg)
+            holder.cardText.text = item.name
             holder.adapterPosition
-            holder.imageView1.setOnClickListener {
+            holder.cardImg.setOnClickListener {
                 moveToImageViewerScreen(holder)
             }
         }

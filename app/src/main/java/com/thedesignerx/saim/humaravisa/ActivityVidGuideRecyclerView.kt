@@ -14,18 +14,16 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ActivityTouristVisa : AppCompatActivity() {
+class ActivityVidGuideRecyclerView : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tourist_visa)
-
-        recyclerViewTourist.setBackgroundResource(R.drawable.shape_react01)
+        setContentView(R.layout.activity_vid_guide_recyclerview)
         recycler()
 
     }
     private fun recycler() {
-        recyclerView = findViewById(R.id.recyclerViewTourist)
+        recyclerView = findViewById(R.id.recyclerViewVidGuide)
         recyclerView?.layoutManager = LinearLayoutManager(this)
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(Api.BASE_URL)
@@ -40,21 +38,20 @@ class ActivityTouristVisa : AppCompatActivity() {
                 response: Response<JsonVisa?>?
             ) {
                 val visa = response?.body() as JsonVisa
-                recyclerView?.adapter = SmallRecyclerAdapter(
-                    this@ActivityTouristVisa,
-                    visa.images,
-                    visa.name
+                recyclerView?.adapter = VidGuideRecyclerAdapter(
+                    this@ActivityVidGuideRecyclerView,
+                    visa.videos
                 )
                 initRecyclerView()
             }
 
             private fun initRecyclerView() {
                 val linearLayoutManager = LinearLayoutManager(
-                    this@ActivityTouristVisa,
+                    this@ActivityVidGuideRecyclerView,
                     LinearLayoutManager.VERTICAL,
                     false
                 )
-                findViewById<RecyclerView?>(R.id.recyclerViewTourist)?.layoutManager = linearLayoutManager
+                findViewById<RecyclerView?>(R.id.recyclerViewVidGuide)?.layoutManager = linearLayoutManager
             }
 
             override fun onFailure(call: Call<JsonVisa?>?, t: Throwable?) {

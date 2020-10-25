@@ -69,7 +69,8 @@
                             android:padding="2dp"
                             tools:text="Egypt Visit Visa If an individual wants to get your Egypt Visit visa processed quickly, Humara Visa help to get it. When  any visitor is  planning to visit Egypt and…"
                             android:textColor="@color/colorblack"
-                            android:textSize="16sp" />
+                            android:textSize="36sp"
+                            android:textStyle="bold"/>
 
                         <Button
                             android:id="@+id/touristBtn"

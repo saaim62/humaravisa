@@ -1,30 +1,18 @@
 package com.thedesignerx.saim.humaravisa
 
-import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_small_recyclerview.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-class SmallImageActivity : AppCompatActivity() {
+class ActivityMain : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_small_recyclerview)
-
         onClickListeners()
         cardBackground()
         video()
@@ -57,7 +45,7 @@ class SmallImageActivity : AppCompatActivity() {
         touristBtn.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SmallImageActivity,
+                    this@ActivityMain,
                     ActivityTouristVisa::class.java
                 )
             )
@@ -67,7 +55,7 @@ class SmallImageActivity : AppCompatActivity() {
         studyBtn.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SmallImageActivity,
+                    this@ActivityMain,
                     ActivityStudyVisa::class.java
                 )
             )
@@ -77,7 +65,7 @@ class SmallImageActivity : AppCompatActivity() {
         workBtn.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SmallImageActivity,
+                    this@ActivityMain,
                     ActivityWorkVisa::class.java
                 )
             )
@@ -87,7 +75,7 @@ class SmallImageActivity : AppCompatActivity() {
         applyBtn.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SmallImageActivity,
+                    this@ActivityMain,
                     ActivityApply::class.java
                 )
             )
@@ -97,7 +85,7 @@ class SmallImageActivity : AppCompatActivity() {
         guideBtn.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SmallImageActivity,
+                    this@ActivityMain,
                     ActivityVideoGuide::class.java
                 )
             )
@@ -107,7 +95,7 @@ class SmallImageActivity : AppCompatActivity() {
         contactBtn.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SmallImageActivity,
+                    this@ActivityMain,
                     ActivityContactUs::class.java
                 )
             )

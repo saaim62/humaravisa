@@ -1,7 +1,8 @@
 package com.thedesignerx.saim.humaravisa
 import java.io.Serializable
 
-data class JSONRestaurant(
+data class JsonVisa(
     var images: List<Image> = listOf(),
-    var name: String = ""
+    var videos: List<Video> = listOf(),
+    var name: String
 ):Serializable

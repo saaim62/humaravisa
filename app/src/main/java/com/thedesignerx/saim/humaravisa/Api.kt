@@ -4,10 +4,10 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface Api {
-    @GET("6142")
-    fun getContact(): Call<JSONRestaurant?>?
+    @GET("7ab8ba49")
+    fun getContact(): Call<JsonVisa?>?
 
     companion object {
-        const val BASE_URL: String = "https://api.staging.seatedapp.io/v1/business/"
+        const val BASE_URL: String = "https://api.mocki.io/v1/"
     }
 }

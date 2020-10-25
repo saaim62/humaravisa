@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/logoshadow"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ActivityVidGuideRecyclerView" />
         <activity android:name=".ActivityVideoGuide" />
         <activity android:name=".ActivityContactUs" />
         <activity android:name=".ActivityApply" />
@@ -28,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SmallImageActivity" />
+        <activity android:name=".ActivityMain" />
         <activity android:name=".ImageGallaryDetailActivity" />
     </application>
 

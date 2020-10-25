@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/visit" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewTourist"
+        android:id="@+id/recyclerViewVidGuide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#6D929B"
