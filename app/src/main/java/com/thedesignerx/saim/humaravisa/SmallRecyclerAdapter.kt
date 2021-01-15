@@ -33,7 +33,7 @@ class SmallRecyclerAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.activity_small_images, parent, false)
+        val view = inflater.inflate(R.layout.list_item, parent, false)
         return RecyclerViewHolder(view)
     }
 

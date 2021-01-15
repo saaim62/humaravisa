@@ -4,17 +4,43 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.AbsListView
 import android.widget.Button
+import android.widget.GridView
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
+import saim.com.ButtSweets.activities.main.GridData
 
 class ActivityMain : AppCompatActivity() {
+    private lateinit var adapter: GridAdapter
+    private var gd: GridData = GridData()
+    private lateinit var gv: GridView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_small_recyclerview)
+        setContentView(R.layout.activity_home_page)
+
+        gv = findViewById(R.id.gridview)
+        //instantiate and set adapter
+        adapter = GridAdapter(this, gd.data)
+        gv.adapter = adapter
+
+        gv.setOnScrollListener(object : AbsListView.OnScrollListener {
+            //     Boolean isScrollStop=false;
+            override fun onScrollStateChanged(view: AbsListView, scrollState: Int) {
+                if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+                    (gv.adapter as GridAdapter).notifyDataSetChanged()
+                }
+            }
+
+            override fun onScroll(
+                view: AbsListView, firstVisibleItem: Int,
+                visibleItemCount: Int, totalItemCount: Int
+            ) {
+            }
+        })
+
         onClickListeners()
-        cardBackground()
         video()
     }
     override fun onResume() {
@@ -29,15 +55,6 @@ class ActivityMain : AppCompatActivity() {
         videoView.requestFocus()
         videoView.setOnPreparedListener { mp -> mp.isLooping = true }
         videoView.start()
-    }
-
-    private fun cardBackground() {
-        card1.setBackgroundResource(R.drawable.shape_react01)
-        card2.setBackgroundResource(R.drawable.shape_react01)
-        card3.setBackgroundResource(R.drawable.shape_react01)
-        card4.setBackgroundResource(R.drawable.shape_react01)
-        card5.setBackgroundResource(R.drawable.shape_react01)
-        card6.setBackgroundResource(R.drawable.shape_react01)
     }
 
     private fun onClickListeners() {

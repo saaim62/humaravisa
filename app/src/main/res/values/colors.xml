@@ -11,5 +11,13 @@
     <color name="colorgray00">#FFF3F2F2</color>
     <color name="colorred">#E70808</color>
     <color name="textcardColor">#3f3f3f</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#00a5ff</color>
+
+    <color name="colorBlack">#000000</color>
+
+
 </resources>
 

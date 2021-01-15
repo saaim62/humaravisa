@@ -1,7 +1,9 @@
 package com.thedesignerx.saim.humaravisa
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.animation.AnimationUtils
@@ -11,16 +13,18 @@ import java.util.*
 
 
 class SplashActivity : Activity() {
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val sPlashScreen: SplashActivity = this
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        val sPlashScreen: SplashActivity = this
         setContentView(R.layout.activity_splash)
         val imageView = findViewById<ImageView>(R.id.ivSplashLogo)
         imageView.scaleType = ImageView.ScaleType.FIT_XY
 
         //not going to use this feature in near future.
-        val ids = intArrayOf(R.drawable.logoshadow, R.drawable.logoshadow)
+        val ids = intArrayOf(R.drawable.rlogo, R.drawable.rlogo)
         val randomGenerator = Random()
         val r = randomGenerator.nextInt(ids.size)
         imageView.setImageDrawable(resources.getDrawable(ids[r]))
