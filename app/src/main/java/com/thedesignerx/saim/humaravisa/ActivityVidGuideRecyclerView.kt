@@ -1,6 +1,7 @@
 package com.thedesignerx.saim.humaravisa
 
 import android.content.ContentValues
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,8 @@ class ActivityVidGuideRecyclerView : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vid_guide_recyclerview)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         recycler()
 
     }

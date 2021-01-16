@@ -1,9 +1,11 @@
 package com.thedesignerx.saim.humaravisa
 
 import android.content.ContentValues
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +21,7 @@ class ActivityTouristVisa : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tourist_visa)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         recyclerViewTourist.setBackgroundResource(R.drawable.shape_react01)
         recycler()
@@ -55,6 +58,7 @@ class ActivityTouristVisa : AppCompatActivity() {
                     false
                 )
                 findViewById<RecyclerView?>(R.id.recyclerViewTourist)?.layoutManager = linearLayoutManager
+                progressBar.visibility =View.GONE
             }
 
             override fun onFailure(call: Call<JsonVisa?>?, t: Throwable?) {

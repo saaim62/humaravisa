@@ -1,47 +1,41 @@
 package com.thedesignerx.saim.humaravisa
 
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.AbsListView
-import android.widget.Button
 import android.widget.GridView
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
-import saim.com.ButtSweets.activities.main.GridData
+import kotlinx.android.synthetic.main.activity_home.card2
+import kotlinx.android.synthetic.main.activity_home.card3
+import kotlinx.android.synthetic.main.activity_home.card4
+import kotlinx.android.synthetic.main.activity_home.card5
+import kotlinx.android.synthetic.main.activity_home.card6
+import kotlinx.android.synthetic.main.activity_home.cardImgCake
+import kotlinx.android.synthetic.main.activity_home.cardImgHalwa
+import kotlinx.android.synthetic.main.activity_home.cardImgInstant
+import kotlinx.android.synthetic.main.activity_home.cardImgSamosa
+import kotlinx.android.synthetic.main.activity_home.cardImgSweet
+import kotlinx.android.synthetic.main.activity_home.cardImgTvc
+import kotlinx.android.synthetic.main.activity_home.cardList
+import kotlinx.android.synthetic.main.activity_home_page.*
+import kotlinx.android.synthetic.main.gridhome.*
 
 class ActivityMain : AppCompatActivity() {
-    private lateinit var adapter: GridAdapter
-    private var gd: GridData = GridData()
+//    private lateinit var adapter: GridAdapter
+//    private var gd: GridData = GridData()
     private lateinit var gv: GridView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
-
-        gv = findViewById(R.id.gridview)
-        //instantiate and set adapter
-        adapter = GridAdapter(this, gd.data)
-        gv.adapter = adapter
-
-        gv.setOnScrollListener(object : AbsListView.OnScrollListener {
-            //     Boolean isScrollStop=false;
-            override fun onScrollStateChanged(view: AbsListView, scrollState: Int) {
-                if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
-                    (gv.adapter as GridAdapter).notifyDataSetChanged()
-                }
-            }
-
-            override fun onScroll(
-                view: AbsListView, firstVisibleItem: Int,
-                visibleItemCount: Int, totalItemCount: Int
-            ) {
-            }
-        })
-
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         onClickListeners()
         video()
+//        cardBackground()
     }
     override fun onResume() {
         super.onResume()
@@ -56,10 +50,25 @@ class ActivityMain : AppCompatActivity() {
         videoView.setOnPreparedListener { mp -> mp.isLooping = true }
         videoView.start()
     }
+    private fun cardBackground() {
+        cardList.setBackgroundResource(R.drawable.shape_react01)
+        card2.setBackgroundResource(R.drawable.shape_react01)
+        card3.setBackgroundResource(R.drawable.shape_react01)
+        card4.setBackgroundResource(R.drawable.shape_react01)
+        card5.setBackgroundResource(R.drawable.shape_react01)
+        card6.setBackgroundResource(R.drawable.shape_react01)
+    }
 
     private fun onClickListeners() {
-        val touristBtn = findViewById<Button>(R.id.touristBtn)
-        touristBtn.setOnClickListener {
+        searchView.setOnClickListener {
+            etSearch.visibility = View.VISIBLE
+            searchBtnClose.visibility = View.VISIBLE
+        }
+        searchBtnClose.setOnClickListener {
+            etSearch.visibility = View.GONE
+            searchBtnClose.visibility = View.GONE
+        }
+        cardImgCake.setOnClickListener {
             startActivity(
                 Intent(
                     this@ActivityMain,
@@ -68,8 +77,7 @@ class ActivityMain : AppCompatActivity() {
             )
         }
 
-        val studyBtn = findViewById<Button>(R.id.studyBtn)
-        studyBtn.setOnClickListener {
+        cardImgSamosa.setOnClickListener {
             startActivity(
                 Intent(
                     this@ActivityMain,
@@ -78,8 +86,7 @@ class ActivityMain : AppCompatActivity() {
             )
         }
 
-        val workBtn = findViewById<Button>(R.id.workBtn)
-        workBtn.setOnClickListener {
+        cardImgSweet.setOnClickListener {
             startActivity(
                 Intent(
                     this@ActivityMain,
@@ -88,8 +95,7 @@ class ActivityMain : AppCompatActivity() {
             )
         }
 
-        val applyBtn = findViewById<Button>(R.id.applyBtn)
-        applyBtn.setOnClickListener {
+        cardImgHalwa.setOnClickListener {
             startActivity(
                 Intent(
                     this@ActivityMain,
@@ -98,8 +104,7 @@ class ActivityMain : AppCompatActivity() {
             )
         }
 
-        val guideBtn = findViewById<Button>(R.id.guideBtn)
-        guideBtn.setOnClickListener {
+        cardImgInstant.setOnClickListener {
             startActivity(
                 Intent(
                     this@ActivityMain,
@@ -108,8 +113,7 @@ class ActivityMain : AppCompatActivity() {
             )
         }
 
-        val contactBtn = findViewById<Button>(R.id.contactBtn)
-        contactBtn.setOnClickListener {
+        cardImgTvc.setOnClickListener {
             startActivity(
                 Intent(
                     this@ActivityMain,

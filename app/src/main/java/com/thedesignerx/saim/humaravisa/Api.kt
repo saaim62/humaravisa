@@ -4,7 +4,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface Api {
-    @GET("7ab8ba49")
+    @GET("7ab8ba49/butt")
     fun getContact(): Call<JsonVisa?>?
 
     companion object {

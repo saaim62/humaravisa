@@ -1,6 +1,7 @@
 package com.thedesignerx.saim.humaravisa
 
 import android.content.ContentValues
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,7 @@ class ActivityStudyVisa : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_study_visa)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         recyclerViewStudy.setBackgroundResource(R.drawable.shape_react01)
         recycler()

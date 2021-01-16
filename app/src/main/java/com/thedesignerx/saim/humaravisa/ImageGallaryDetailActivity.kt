@@ -1,6 +1,7 @@
 package com.thedesignerx.saim.humaravisa
 
 import android.content.ContentValues
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -21,6 +22,8 @@ class ImageGallaryDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zoom_recyclerview)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         button_close = findViewById<TextView>(R.id.button_close) as Button
         textView = findViewById(R.id.textView)
         StatusBarUtil.setTransparent(this)

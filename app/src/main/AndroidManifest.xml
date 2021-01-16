@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logoshadow"
-        android:label="Humara Visa"
-        android:roundIcon="@drawable/logoshadow"
+        android:icon="@drawable/buttlogo"
+        android:label="Butt Sweets"
+        android:roundIcon="@drawable/buttlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ActivityVidGuideRecyclerView" />
@@ -22,7 +22,7 @@
         <activity android:name=".Home" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,6 +31,10 @@
         </activity>
         <activity android:name=".ActivityMain" />
         <activity android:name=".ImageGallaryDetailActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
